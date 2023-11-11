@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import { Template, Params } from '../typeConfiguration';
 
 const archOptions = ['arm64', 'arm'];
@@ -25,6 +27,8 @@ const externalCommandPlaceholder = `{
     "LLVM_DIS": "clang/bin/llvm-dis"
 }`
 const BuildParams = ({ updateParams, template }: { updateParams: (value: Template) => void, template: Template }) => {
+    const { t } = useVoerkaI18n()
+
     const [external, setExternal] = useState("")
     const [isParse, setIsParse] = useState(false)
 
@@ -94,18 +98,18 @@ const BuildParams = ({ updateParams, template }: { updateParams: (value: Templat
                         }
                         updateParams(newTemplate)
                     }}
-                    renderInput={(params) => <TextField {...params} label="Arch" value={template.params.ARCH} />}
+                    renderInput={(params) => <TextField {...params} label={t("Arch")} value={template.params.ARCH} />}
                 />
                 <TextField
                     id='paramsCC'
                     fullWidth
                     variant="outlined"
-                    label="Compiler"
+                    label={t("Compiler")}
                     value={template.params.CC}
                     onChange={onChange} />
                 <TextField
                     className='col-span-2'
-                    label="Edit your params"
+                    label={t("Edit your params")}
                     multiline
                     placeholder={externalCommandPlaceholder}
                     variant="filled"

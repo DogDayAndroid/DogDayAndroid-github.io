@@ -16,6 +16,8 @@ import Toolchains from './Toolchains/Toolchains';
 import BuildParams from './BuildParams/Buildparams';
 import AnyKernel3 from './Anykernel3/Anykernel3';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 const template: Template = {
     "kernelSource": {
         "name": "",
@@ -44,6 +46,8 @@ const template: Template = {
 // nextjs中组件事件绑定，父组件点击执行子组件函数，子组件点击执行父组件函数的方法
 // https://blog.csdn.net/qq_41211900/article/details/131935745
 const Configuration = () => {
+    const { t } = useVoerkaI18n()
+
     const [output, setOutput] = React.useState(template);
     return (
         <Card className='h-full w-full'>
@@ -51,19 +55,19 @@ const Configuration = () => {
                 <Grid xs={8}>
                     <CardBody className='space-x-1 h-full place-items-center'>
                         <Accordion className="config-panel">
-                            <AccordionItem key="1" title="Kernel Source">
+                            <AccordionItem key="1" title={t("Kernel Source")}>
                                 <KernelSource updateKernelSource={setOutput} template={output} />
                             </AccordionItem>
-                            <AccordionItem key="2" title="Toolchains">
+                            <AccordionItem key="2" title={t("Toolchains")}>
                                 <Toolchains updateToolchains={setOutput} template={output} />
                             </AccordionItem>
-                            <AccordionItem key="3" title="Build params">
+                            <AccordionItem key="3" title={t("Build params")}>
                                 <BuildParams updateParams={setOutput} template={output} />
                             </AccordionItem>
-                            <AccordionItem key="4" title="AnyKernel3">
+                            <AccordionItem key="4" title={t("AnyKernel3")}>
                                 <AnyKernel3 updateAnykernel3={setOutput} template={output} />
                             </AccordionItem>
-                            <AccordionItem key="5" title='Other Configuration'>
+                            <AccordionItem key="5" title={t('Other Configuration')}>
                                 <div className='grid grid-cols-2 gap-x-4'>
                                     <Checkbox
                                         isSelected={output.withKernelSU}
@@ -73,7 +77,7 @@ const Configuration = () => {
                                             }
                                         }
                                     >
-                                        Is build with KernelSU
+                                        {t("Is build with KernelSU")}
                                     </Checkbox>
                                     <Checkbox
                                         isSelected={output.ccache}
@@ -83,7 +87,7 @@ const Configuration = () => {
                                             }
                                         }
                                     >
-                                        Use ccache
+                                        {t("Use ccache")}
                                     </Checkbox>
                                 </div>
                             </AccordionItem>
@@ -94,7 +98,7 @@ const Configuration = () => {
                     <CardBody className="config-output min-h-full">
                         <Textarea
                             isReadOnly
-                            label="Output"
+                            label={t("Output")}
                             variant="bordered"
                             placeholder={JSON.stringify({ output }, null, "\t")}
                             value={JSON.stringify(output, null, "\t")}

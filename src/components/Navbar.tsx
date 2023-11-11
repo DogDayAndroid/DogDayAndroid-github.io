@@ -4,9 +4,14 @@ import React from 'react';
 import { usePathname } from "next/navigation";
 import { Navbar as NextNavBar, NavbarBrand, NavbarContent, NavbarItem, Link, Avatar } from "@nextui-org/react";
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
+import { LangSwitcher } from './LangSwitcher';
 
 const Navbar = ({ setMuiMode }: { setMuiMode: (value: 'light' | 'dark') => void }) => {
+    const { t } = useVoerkaI18n()
+
     // 获取当前网页路径
     const pathname = usePathname();
 
@@ -41,18 +46,19 @@ const Navbar = ({ setMuiMode }: { setMuiMode: (value: 'light' | 'dark') => void 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem data-active={includes(pathname, "Config")}>
                     <Link color="foreground" id="Config" href="/Config">
-                        Config
+                        {t("Config")}
                     </Link>
                 </NavbarItem>
                 <NavbarItem data-active={includes(pathname, "Docs")}>
                     <Link color="foreground" id="Docs" href="/Docs">
-                        Docs
+                        {t("Docs")}
                     </Link>
                 </NavbarItem>
             </NavbarContent>
 
             <NavbarContent as="div" justify="end">
                 <ThemeSwitcher setMuiMode={setMuiMode} />
+                <LangSwitcher />
                 <Link isExternal href="https://github.com/easterNday">
                     <Avatar
                         isBordered

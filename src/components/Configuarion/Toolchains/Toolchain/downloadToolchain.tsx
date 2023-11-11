@@ -15,9 +15,12 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import TextField from '@mui/material/TextField';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import { Toolchain, DownloadToolchain } from '../../typeConfiguration';
 
 function DownloadToolchain({ toolchain, index, onChange, onDelete }: { toolchain: DownloadToolchain, index: number, onChange: (index: number, toolchain: Toolchain) => void, onDelete: () => void }) {
+    const { t } = useVoerkaI18n()
 
     function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const changeId = event.target.id;
@@ -62,18 +65,18 @@ function DownloadToolchain({ toolchain, index, onChange, onDelete }: { toolchain
                 <Grid xs={11}>
                     <div className='grid grid-cols-2 gap-x-4'>
                         <TextField
-                            label="Name"
+                            label={t("Name")}
                             value={toolchain.name}
                             id='repoToolchianName'
                             onChange={onInputChange} />
                         <TextField
-                            label="Url"
+                            label={t("Url")}
                             value={toolchain.url}
                             id='repoToolchianUrl'
                             onChange={onInputChange} />
                     </div>
                     <Button fullWidth size='small' variant="outlined" startIcon={<AddIcon />} onClick={addBinPathInput}>
-                        Add bin path
+                        {t("Add bin path")}
                     </Button>
                     <div className='grid grid-cols-2 gap-x-4'>
                         {

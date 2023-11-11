@@ -4,6 +4,8 @@ import React from 'react';
 
 import TextField from '@mui/material/TextField';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import { Template } from '../typeConfiguration';
 
 // 获取仓库分支的 API 接口
@@ -13,6 +15,8 @@ import { Template } from '../typeConfiguration';
 //   .catch(error => console.error('Error:', error));
 
 const KernelSource = ({ updateKernelSource, template }: { updateKernelSource: (value: Template) => void, template: Template }) => {
+    const { t } = useVoerkaI18n()
+
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const changeId = event.target.id;
         const changeValue = event.target.value;
@@ -42,31 +46,31 @@ const KernelSource = ({ updateKernelSource, template }: { updateKernelSource: (v
         <div className='grid grid-cols-2 gap-4'>
             <TextField
                 variant='outlined'
-                label="Name"
+                label={t("Name")}
                 value={template.kernelSource.name}
                 id='kernelSourceName'
                 onChange={onChange} />
             <TextField
                 variant='outlined'
-                label="Repo"
+                label={t("Repo")}
                 value={template.kernelSource.repo}
                 id='kernelSourceRepo'
                 onChange={onChange} />
             <TextField
                 variant='outlined'
-                label="Branch"
+                label={t("Branch")}
                 value={template.kernelSource.branch}
                 id='kernelSourceBranch'
                 onChange={onChange} />
             <TextField
                 variant='outlined'
-                label="Device code"
+                label={t("Device code")}
                 value={template.kernelSource.device}
                 id='kernelSourceDevice'
                 onChange={onChange} />
             <TextField
                 variant='outlined'
-                label="Defconfig"
+                label={t("Defconfig")}
                 value={template.kernelSource.defconfig}
                 id='kernelSourceDefconfig'
                 onChange={onChange} />

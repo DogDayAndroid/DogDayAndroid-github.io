@@ -1,0 +1,205 @@
+{
+    "Android Kernel Builder": {
+        "zh": "Android内核生成器",
+        "en": "Android Kernel Builder",
+        "$files": [
+            "app/page.tsx"
+        ]
+    },
+    "This Github Action helps you build kernels. It reads multiple kernel sources from a configuration file and builds them using different toolchains. Additionally, it supports patching the kernel with KernelSU and uploading the built kernel image.": {
+        "zh": "这个Github操作可以帮助您构建内核。它从配置文件中读取多个内核源,并使用不同的工具链构建它们。此外,它还支持使用KernelSU修补内核,并上传构建的内核映像。",
+        "en": "This Github Action helps you build kernels It reads multiple kernel sources from a configuration file and builds them using different toolchains Additionally, it supports patching the kernel with KernelSU and uploading the build kernel image",
+        "$files": [
+            "app/page.tsx"
+        ]
+    },
+    "Visit source code on GitHub.": {
+        "zh": "从 GitHub 查看源代码",
+        "en": "Visit source code on GitHub",
+        "$files": [
+            "app/page.tsx"
+        ]
+    },
+    "Config": {
+        "zh": "配置",
+        "en": "Config",
+        "$files": [
+            "components/Navbar.tsx"
+        ]
+    },
+    "Docs": {
+        "zh": "文档",
+        "en": "Docs",
+        "$files": [
+            "components/Navbar.tsx"
+        ]
+    },
+    "Kernel Source": {
+        "zh": "内核源",
+        "en": "Kernel Source",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Toolchains": {
+        "zh": "编译工具链",
+        "en": "Toolchains",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Build params": {
+        "zh": "编译参数",
+        "en": "Build params",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "AnyKernel3": {
+        "zh": "AnyKernel3 打包",
+        "en": "AnyKernel3",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Other Configuration": {
+        "zh": "其他配置",
+        "en": "Other Configuration",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Is build with KernelSU": {
+        "zh": "是否使用 KernelSU 构建",
+        "en": "Is built with KernelSU",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Use ccache": {
+        "zh": "是否启用编译缓存",
+        "en": "Use ccache",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Output": {
+        "zh": "配置文件",
+        "en": "Output",
+        "$files": [
+            "components/Configuarion/Configuration.tsx"
+        ]
+    },
+    "Use Anykernel3 pack your kernel?": {
+        "en": "Use Anykernel3 pack your kernel?",
+        "$files": [
+            "components/Configuarion/Anykernel3/Anykernel3.tsx"
+        ],
+        "zh": "是否使用 Anykernel3 打包为刷机包"
+    },
+    "Publish to github release?": {
+        "en": "Publish to github release?",
+        "$files": [
+            "components/Configuarion/Anykernel3/Anykernel3.tsx"
+        ],
+        "zh": "是否发布到 Github"
+    },
+    "Repo": {
+        "en": "Repo",
+        "$files": [
+            "components/Configuarion/Anykernel3/Anykernel3.tsx",
+            "components/Configuarion/KernelSource/KernelSource.tsx",
+            "components/Configuarion/Toolchains/Toolchain/repoToolchain.tsx"
+        ],
+        "zh": "仓库地址"
+    },
+    "Branch": {
+        "en": "Branch",
+        "$files": [
+            "components/Configuarion/Anykernel3/Anykernel3.tsx",
+            "components/Configuarion/KernelSource/KernelSource.tsx",
+            "components/Configuarion/Toolchains/Toolchain/repoToolchain.tsx"
+        ],
+        "zh": "分支名称"
+    },
+    "Arch": {
+        "en": "Arch",
+        "$files": [
+            "components/Configuarion/BuildParams/Buildparams.tsx"
+        ],
+        "zh": "架构"
+    },
+    "Compiler": {
+        "en": "Compiler",
+        "$files": [
+            "components/Configuarion/BuildParams/Buildparams.tsx"
+        ],
+        "zh": "编译器"
+    },
+    "Edit your params": {
+        "en": "Edit your params",
+        "$files": [
+            "components/Configuarion/BuildParams/Buildparams.tsx"
+        ],
+        "zh": "编辑您的参数"
+    },
+    "Name": {
+        "en": "Name",
+        "$files": [
+            "components/Configuarion/KernelSource/KernelSource.tsx",
+            "components/Configuarion/Toolchains/Toolchain/downloadToolchain.tsx",
+            "components/Configuarion/Toolchains/Toolchain/repoToolchain.tsx"
+        ],
+        "zh": "名称"
+    },
+    "Device code": {
+        "en": "Device code",
+        "$files": [
+            "components/Configuarion/KernelSource/KernelSource.tsx"
+        ],
+        "zh": "设备代码"
+    },
+    "Defconfig": {
+        "en": "Defconfig",
+        "$files": [
+            "components/Configuarion/KernelSource/KernelSource.tsx"
+        ],
+        "zh": "Defconfig 路径"
+    },
+    "Add tool chain (Repo)": {
+        "en": "Add tool chain (Repo)",
+        "$files": [
+            "components/Configuarion/Toolchains/Toolchains.tsx"
+        ],
+        "zh": "从 Git 克隆工具链"
+    },
+    "Add tool chain (Download)": {
+        "en": "Add tool chain (Download)",
+        "$files": [
+            "components/Configuarion/Toolchains/Toolchains.tsx"
+        ],
+        "zh": "从链接下载工具链"
+    },
+    "Url": {
+        "en": "Url",
+        "$files": [
+            "components/Configuarion/Toolchains/Toolchain/downloadToolchain.tsx"
+        ],
+        "zh": "链接地址"
+    },
+    "Add bin path": {
+        "en": "Add bin path",
+        "$files": [
+            "components/Configuarion/Toolchains/Toolchain/downloadToolchain.tsx",
+            "components/Configuarion/Toolchains/Toolchain/repoToolchain.tsx"
+        ],
+        "zh": "添加可执行文件所在文件夹路径"
+    },
+    "当前语言": {
+        "en": "Current language",
+        "$files": [
+            "components/LangSwitcher/index.tsx"
+        ],
+        "zh": "当前语言"
+    }
+}

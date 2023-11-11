@@ -6,6 +6,8 @@ import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import RepoToolchain from './Toolchain/repoToolchain';
 import DownloadToolchain from './Toolchain/downloadToolchain';
 
@@ -13,6 +15,8 @@ import { Template, Toolchain } from '../typeConfiguration';
 
 
 const Toolchains = ({ updateToolchains, template }: { updateToolchains: (value: Template) => void, template: Template }) => {
+    const { t } = useVoerkaI18n()
+
     // 扩展 toolchain 列表
     const addToolchain = (toolchainType: string) => {
         const repoToolchainTemplate = {
@@ -55,10 +59,10 @@ const Toolchains = ({ updateToolchains, template }: { updateToolchains: (value: 
         <>
             <ButtonGroup fullWidth variant="outlined">
                 <Button size='small' variant="outlined" startIcon={<AddIcon />} onClick={() => addToolchain('repo')}>
-                    Add tool chain (Repo)
+                    {t("Add tool chain (Repo)")}
                 </Button>
                 <Button size='small' variant="outlined" startIcon={<AddIcon />} onClick={() => addToolchain('download')}>
-                    Add tool chain (Download)
+                    {t("Add tool chain (Download)")}
                 </Button>
             </ButtonGroup>
 

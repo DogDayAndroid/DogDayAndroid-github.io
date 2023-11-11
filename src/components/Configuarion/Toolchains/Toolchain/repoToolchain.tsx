@@ -15,9 +15,12 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import TextField from '@mui/material/TextField';
 
+import { useVoerkaI18n } from "@voerkai18n/react"
+
 import { Toolchain, RepoToolchain } from '../../typeConfiguration';
 
 function RepoToolchain({ toolchain, index, onChange, onDelete }: { toolchain: RepoToolchain, index: number, onChange: (index: number, toolchain: Toolchain) => void, onDelete: () => void }) {
+    const { t } = useVoerkaI18n()
 
     function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
         const changeId = event.target.id;
@@ -65,23 +68,23 @@ function RepoToolchain({ toolchain, index, onChange, onDelete }: { toolchain: Re
                 <Grid xs={11}>
                     <div className='grid grid-cols-3 gap-x-4'>
                         <TextField
-                            label="Name"
+                            label={t("Name")}
                             value={toolchain.name}
                             id='repoToolchianName'
                             onChange={onInputChange} />
                         <TextField
-                            label="Repo"
+                            label={t("Repo")}
                             value={toolchain.repo}
                             id='repoToolchianRepo'
                             onChange={onInputChange} />
                         <TextField
-                            label="Branch"
+                            label={t("Branch")}
                             value={toolchain.branch}
                             id='repoToolchianBranch'
                             onChange={onInputChange} />
                     </div>
                     <Button fullWidth size='small' variant="outlined" startIcon={<AddIcon />} onClick={addBinPathInput}>
-                        Add bin path
+                        {t("Add bin path")}
                     </Button>
                     <div className='grid grid-cols-2 gap-x-4'>
                         {
