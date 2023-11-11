@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  images: { unoptimized: true }
 }
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 import rehypePrettyCode from 'rehype-pretty-code';
@@ -17,8 +21,19 @@ import createMDX from '@next/mdx'
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [remarkGfm, remarkMath, [remarkEmbedder, { transformers: [oembedTransformer] }]],
-    rehypePlugins: [rehypeAutolinkHeadings, rehypePrettyCode, rehypeKatex, rehypeHighlight,],
+    remarkPlugins: [
+      remarkGfm,
+      remarkMath,
+      [remarkEmbedder, { transformers: [oembedTransformer] }],
+      remarkFrontmatter,
+      [remarkMdxFrontmatter, { name: 'frontmatter' }]
+    ],
+    rehypePlugins: [
+      rehypeAutolinkHeadings,
+      rehypePrettyCode,
+      rehypeKatex,
+      rehypeHighlight,
+    ],
   },
 })
 // Merge MDX config with Next.js config

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+import Image from 'next/image'
+
 export const metadata: Metadata = {
   title: 'Config Builder',
   description: 'Generate your own config',
@@ -15,9 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <main className='main'>
+          <div className='grid p-16 justify-items-center'>
             {children}
-          </main>
+          </div>
         </Providers>
       </body>
     </html >
